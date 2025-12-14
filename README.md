@@ -7,67 +7,89 @@
 
 ---
 
-This study evaluates the **electricity waste–financial development nexus** across EU‑27 countries using an **extended STIRPAT framework** with novel circular economy metrics and dynamic econometric tools.
+## (i). Overview
+
+This study evaluates the **electricity waste–financial development nexus** across EU‑27 countries using an **extended STIRPAT (Stochastic Impacts by Regression on Population, Affluence, and Technology)** framework enriched by **novel circular economy metrics** and **dynamic panel econometrics**.
 
 ---
 
-## 📊 Data Construction
+## (ii). Data Construction
 
-- Curated a **balanced EU‑27 panel dataset** covering **2010–2020**  
-  - Observations: **N = 297**
-  - Achieved balance via **interpolation and mean imputation**
-- Compiled economic, environmental, financial, and circular‑economy indicators from official EU sources
-
----
-
-## ♻️ Circular Economy Index (CEI)
-
-- Constructed a **novel Circular Economy Index (CEI)** using:
-  - **20 sub‑indicators**
-  - **Entropy Weight Method (EWM)** for objective weighting
-- Conducted robustness validation using:
-  - **Principal Component Analysis (PCA)** to confirm weighting stability and index consistency
+- Developed a **balanced panel** for EU‑27 over **2010–2020**  
+  - Total observations: **N = 297**
+  - Balanced via **interpolation** and **mean imputation**
+- Combined indicators from economic, environmental, energy, and circular economy domains
+- All data sourced from official EU and international statistical portals
 
 ---
 
-## 🔬 Econometric Diagnostics
+## (iii). Circular Economy Index (CEI)
 
-All variables were pre‑tested to ensure estimator efficiency and inference validity:
+- Engineered a **composite CEI** using:
+  - **20 sub-indicators**
+  - Weighted via the **Entropy Weight Method (EWM)**
+- Robustness checked with:
+  - **Principal Component Analysis (PCA)** to verify weighting stability and component structure
 
-- **Cross‑sectional dependence** (CD test)
-- **Fisher‑type panel unit root tests**
-- **Multicollinearity diagnostics**
-- **Heteroskedasticity and serial correlation tests**
-
-The model was estimated through a pipeline:  
-**OLS (init) → FGLS (baseline) → PCSE (robustness) → 2SLS (endogeneity correction)**
 ---
 
-### 🔍 Key Findings
-- **CEI** and **Financial Development (FD)** reduce electricity waste via direct and interacting effects.
-- A **positive synergy effect (CEI × FD)** at 1% significance suggests **amplified rebound risks** without coordinated policies.
-- Confirmed the **Environmental Kuznets Curve (EKC)**: GDP first increases, then decreases E-WASTE.
-- **Dynamic threshold analysis** (Seo et al., 2019): rebound effects emerge when CEI crosses **≈ 0.28–0.38**.
-- **Granger causality** (Dumitrescu–Hurlin, 2012) reveals:
+## (iv). Econometric Diagnostics
+
+All variables underwent comprehensive diagnostic testing to ensure valid inference:
+
+- **Cross-sectional dependence**: Pesaran’s CD test
+- **Stationarity**: Fisher-type panel unit root tests
+- **Multicollinearity**: VIF scores
+- **Heteroskedasticity & Serial correlation**: Breusch–Pagan and Wooldridge tests
+
+---
+
+## (v). Modeling Pipeline
+
+A robust multi-stage estimation sequence was employed:
+
+```text
+OLS (initial model)
+→ FGLS (baseline estimator)
+→ PCSE (correcting for heteroskedasticity & CD)
+→ 2SLS (addressing potential endogeneity)
+```
+---
+
+## (vi). Key Findings
+
+- **Both CEI and Financial Development (FD)** reduce E-WASTE directly and interactively
+- **CEI × FD interaction** shows a **positive synergy effect**: risk of **rebound effects** if circular strategies are scaled without financial policy alignment
+- **EKC hypothesis confirmed**: GDP first increases, then reduces E-WASTE over time
+- **Dynamic Threshold Analysis** (Seo et al., 2019):
+  - Reveals critical CEI zone of **0.28–0.38** where rebound consumption risk emerges
+- **Granger Causality Tests** (Dumitrescu–Hurlin, 2012):
   - FD → E-WASTE  
   - E-WASTE → GDP  
-  - Bidirectional links with key CE sub-indicators
+  - Bidirectional causality with select CEI sub-components
 
-### 📁 Repository Contents
-├── E-Waste.do                   # Stata script for extended STIRPAT estimation
-├── RAW-DATA-EWASTE.xlsx         # Raw EU‑27 dataset
-├── dataset_with_CEI_CC.dta      # Processed panel with CEI and carbon indicators
-├── E-WASTE.pdf                  # Research manuscript / summary report
-├── README.md                    # Project documentation
+---
 
+## (vii). Repository Contents
+- `E-Waste.do`: Stata script for extended STIRPAT estimation
+- `RAW-DATA-EWASTE.xlsx`: Raw EU‑27 dataset
+- `dataset_with_CEI_CC.dta`: Processed panel with CEI and carbon indicators
+- `E-WASTE.pdf`: Research manuscript / summary report
+- `README.md`: Project documentation
 
-### 📄 Citation
+## (viii). Citation
 
 > Toan N.T.P., et al. (2025).  
 > *E-Waste, Financial Development Nexus in EU Countries: Insights from Novel Circular Economy Determinants.*  
 > **UEH Young Researcher Award 2025**
 
----
+>  Based study: Nguyen, P.H., Le, T.N., Pham, M.T. et al. Circular economy, economic growth, and e-waste generation in EU27 countries: Further evidence from the novel circular economy index and threshold effect. Environ Sci Pollut Res 31, 55361–55387 (2024). https://doi.org/10.1007/s11356-024-34855-w
+
+## (ix). License
 📜 *MIT License* | 📁 *Stata & Excel-based repository*
+
+## (x). Acknowledgements
+
+This work was conducted under the **UEH Young Researcher Award 2025**.  
 
 
